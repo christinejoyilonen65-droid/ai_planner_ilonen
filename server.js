@@ -64,12 +64,16 @@ async function callGemini(prompt) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] }),
   });
-  const data = await response.json();
-  if (!response.ok) {
-    const err = new Error(data?.error?.message || 'Gemini API request failed');
-    err.status = response.status;
-    throw err;
-  }
+const data = await response.json();
+
+console.log("Gemini Response:", JSON.stringify(data, null, 2));
+
+if (!response.ok) {
+  console.error(data);
+  const err = new Error(data?.error?.message || "Gemini API request failed");
+  err.status = response.status;
+  throw err;
+}
   return data.candidates?.[0]?.content?.parts?.[0]?.text?.trim() || '';
 }
 
