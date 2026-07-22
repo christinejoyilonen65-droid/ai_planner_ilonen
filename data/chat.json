@@ -1,0 +1,22 @@
+[
+  {
+    "role": "user",
+    "text": "Hi",
+    "at": "2026-07-21T10:17:12.910Z"
+  },
+  {
+    "role": "assistant",
+    "text": "Hi there! 👋 \n\nI'm your study-planning assistant, and I'm excited to help you organize your schoolwork and reach your goals. \n\nSince your list is empty right now, why don't we start by adding your first task? Tell me what subjects you're studying or what upcoming exams you have, and we can build a great study plan together!",
+    "at": "2026-07-21T10:17:12.910Z"
+  },
+  {
+    "role": "user",
+    "text": "Can you help me?",
+    "at": "2026-07-21T10:17:26.281Z"
+  },
+  {
+    "role": "assistant",
+    "text": "Hi there! I'd love to help you get organized. 😊 \n\nRight now, your list is empty. To get started, just add a few of your upcoming assignments, exams, or study topics. Once you do that, we can build your perfect study plan together! \n\nWhat are we working on first?",
+    "at": "2026-07-21T10:17:26.281Z"
+  }
+]
