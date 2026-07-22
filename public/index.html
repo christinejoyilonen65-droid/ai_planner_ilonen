@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Study Planner</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">◆</span>
+      <span class="brand-name">AI Study Planner</span>
+    </div>
+    <p class="tagline">Organize your work, let AI build the schedule.</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel tasks-panel">
+      <h2>Your Tasks</h2>
+
+      <form id="task-form" class="task-form">
+        <input type="text" id="task-title" placeholder="Task (e.g. Chapter 4 problem set)" required maxlength="200" />
+        <div class="field-row">
+          <input type="text" id="task-subject" placeholder="Subject" maxlength="60" />
+          <input type="date" id="task-deadline" required />
+        </div>
+        <div class="field-row">
+          <input type="number" id="task-hours" placeholder="Est. hours" min="0.5" step="0.5" value="1" />
+          <select id="task-priority">
+            <option value="low">Low priority</option>
+            <option value="medium" selected>Medium priority</option>
+            <option value="high">High priority</option>
+          </select>
+        </div>
+        <button type="submit">Add Task</button>
+      </form>
+
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span id="progress-text">0 of 0 tasks complete</span>
+        </div>
+        <div class="progress-track">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <ul id="task-list" class="task-list"></ul>
+    </section>
+
+    <section class="panel plan-panel">
+      <div class="panel-header">
+        <h2>Your Study Plan</h2>
+        <button id="generate-btn" type="button">Generate Plan</button>
+      </div>
+      <div id="plan-status" class="status-line" hidden></div>
+      <div id="plan-output" class="plan-output">
+        <p class="empty-state">Add some tasks, then generate a plan to see your day-by-day schedule here.</p>
+      </div>
+    </section>
+
+    <section class="panel chat-panel">
+      <h2>Study Assistant</h2>
+      <div id="chat-log" class="chat-log"></div>
+      <form id="chat-form" class="chat-form">
+        <input type="text" id="chat-input" placeholder="Ask about your plan, a subject, or study tips..." maxlength="1000" required />
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
